@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+$primary-color: #111;
+$secondary-color: white;
+$accent-color: #b06413;
+
+// General Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+  font-family: "Poppins", sans-serif;
+}
+
+// Navbar
+.sticky-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.38);
+  z-index: 3;
+  text-transform: uppercase;
+
+  .logo {
+    font-size: 2em;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: $secondary-color;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  .right a {
+    margin-left: 60px;
+    margin-right: 50px;
+    text-decoration: none;
+    color: $secondary-color;
+  }
+}
+
+// Header
+.index-header {
+  position: relative;
+  padding: 200px 0;
+  text-align: center;
+  color: $secondary-color;
+  font-size: 30px;
+
+  #headerVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .index-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, black, $accent-color);
+    z-index: 1;
+    filter: opacity(40%);
+  }
+
+  .header-text {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    padding-left: 50px;
+
+    h2, h3, p {
+      color: $secondary-color;
+    }
+
+    a {
+      display: inline-block;
+      background: $secondary-color;
+      padding: 10px 30px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $primary-color;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+// Footer
+.footer {
+  background-color: #303030;
+  color: $secondary-color;
+  text-align: center;
+}
