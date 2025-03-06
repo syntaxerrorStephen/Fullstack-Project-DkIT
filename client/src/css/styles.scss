@@ -1,11 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-$primary-color: #111;
-$secondary-color: white;
-$accent-color: #b06413;
+$primary-font: 'Poppins', sans-serif;
+$secondary-font: 'Bebas Neue', sans-serif;
+$primary-bg: #111;
+$nav-bg: rgba(0, 0, 0, 0.380);
+$footer-bg: #303030;
+$primary-text: white;
 
-// General Styles
 * {
   margin: 0;
   padding: 0;
@@ -13,11 +15,11 @@ $accent-color: #b06413;
 }
 
 body {
-  background-color: $primary-color;
-  font-family: "Poppins", sans-serif;
+  background-color: $primary-bg;
+  font-family: $primary-font;
 }
 
-// Navbar
+/* ------ NAVIGATION ------ */
 .sticky-nav {
   display: flex;
   justify-content: space-between;
@@ -25,33 +27,83 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.38);
+  background: $nav-bg;
   z-index: 3;
   text-transform: uppercase;
+
+  .left, .right {
+    display: flex;
+    align-items: center;
+  }
 
   .logo {
     font-size: 2em;
     padding: 15px 20px;
     text-decoration: none;
-    color: $secondary-color;
-    font-family: "Bebas Neue", sans-serif;
+    color: $primary-text;
+    font-family: $secondary-font;
   }
 
   .right a {
     margin-left: 60px;
     margin-right: 50px;
     text-decoration: none;
-    color: $secondary-color;
+    color: $primary-text;
   }
 }
 
-// Header
+/* ------ HEADER ------ */
 .index-header {
   position: relative;
   padding: 200px 0;
   text-align: center;
-  color: $secondary-color;
+  color: $primary-text;
   font-size: 30px;
+
+  .header-text {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    padding-left: 50px;
+
+    h2 {
+      font-size: 2em;
+      font-weight: 800;
+      color: $primary-text;
+      line-height: 1.2em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: $primary-text;
+      line-height: 1.2em;
+      text-transform: uppercase;
+    }
+
+    p {
+      position: relative;
+      font-size: 1em;
+      margin: 20px 0;
+      font-weight: 400;
+      max-width: 700px;
+      color: $primary-text;
+    }
+
+    a {
+      display: inline-block;
+      font-size: 1em;
+      background: $primary-text;
+      padding: 10px 30px;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 10px;
+      color: $primary-bg;
+      letter-spacing: 2px;
+    }
+  }
 
   #headerVideo {
     position: absolute;
@@ -68,36 +120,245 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to left, black, $accent-color);
+    background: linear-gradient(to left, rgb(0, 0, 0), rgb(176, 100, 19));
     z-index: 1;
     filter: opacity(40%);
   }
+}
 
-  .header-text {
-    position: relative;
-    z-index: 2;
-    text-align: left;
-    padding-left: 50px;
+/* ------ FOOTER ------ */
+.footer {
+  background-color: $footer-bg;
+  color: $primary-text;
+  padding: 40px 0;
+  text-align: center;
 
-    h2, h3, p {
-      color: $secondary-color;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .footer-logo h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: $secondary-font;
+  }
+
+  .footer-links {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: inline;
+        margin: 0 10px;
+        
+        a {
+          text-decoration: none;
+          color: $primary-text;
+          font-size: 1.2em;
+        }
+      }
     }
+  }
 
+  .social-icons {
     a {
       display: inline-block;
-      background: $secondary-color;
-      padding: 10px 30px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: $primary-color;
-      letter-spacing: 2px;
+      margin: 0 10px;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .footer-info p {
+    font-size: 1em;
+  }
+}
+
+/* ------ HAMBURGER MENU ------ */
+.hamburger-menu {
+  display: none;
+  padding-right: 50px;
+
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+
+    .line {
+      width: 30px;
+      height: 4px;
+      background-color: $primary-text;
+      transition: 0.4s;
+    }
+  }
+
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    a {
+      padding: 15px 20px;
+      color: $primary-text;
+      text-decoration: none;
+      display: block;
+      transition: 0.4s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
     }
   }
 }
 
-// Footer
-.footer {
-  background-color: #303030;
-  color: $secondary-color;
+
+
+
+.featured-heading {
   text-align: center;
+  font-size: 2em;
+  color: white;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+
+  .product-card {
+    background: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #f39c12;
+      margin-bottom: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      a {
+        flex: 1;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+        border-radius: 5px;
+        text-align: center;
+        transition: background 0.2s ease-in-out;
+
+        &:first-child {
+          background: #3498db;
+        }
+
+        &:last-child {
+          background: #e74c3c;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------ MEDIA QUERIES ------ */
+@media screen and (max-width: 840px) {
+  .quote {
+    h2 {
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+  }
+
+  .right {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .sticky-nav {
+    justify-content: space-between;
+  }
+
+  .dropdown-content.show {
+    display: flex;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-text,
+  .about-image {
+    max-width: 100%;
+  }
 }

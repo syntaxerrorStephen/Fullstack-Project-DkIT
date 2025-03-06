@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <div className="index-header">
         <video autoPlay muted loop id="headerVideo">
-          <source src="public/assets/video.mp4" type="video/mp4" />
+          <source src="assets/video.mp4" type="video/mp4" />
         </video>
         <div className="index-overlay"></div>
         <div className="header-text">

@@ -23,27 +23,12 @@ class Navbar extends Component {
           </Link>
         </div>
         <div className="right">
+          <Link to="/">Login</Link>
           <Link to="/shop">Shop</Link>
           <Link to="/cart" className="cart-icon">
             <i className="fas fa-shopping-cart"></i>
             <span className="cart-count">0</span>
           </Link>
-        </div>
-
-        {/* Hamburger Menu */}
-        <div className="hamburger-menu">
-          <div className="hamburger-icon" onClick={this.toggleMenu}>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-          </div>
-          <div className={`dropdown-content ${this.state.isMenuOpen ? "show" : ""}`}>
-            <Link to="/shop">Shop</Link>
-            <Link to="/cart" className="cart-icon">
-              <i className="fas fa-shopping-cart"></i>
-              <span className="cart-count">0</span>
-            </Link>
-          </div>
         </div>
       </nav>
     );
