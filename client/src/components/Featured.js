@@ -1,13 +1,17 @@
+// Featured Page
+// Basically just checks if the product in the JSON has "isFeatured" set to true and displays it here
+
 import React, { Component } from "react";
-import "../css/styles.scss"; // Reuse the same SCSS file
-import productsData from "../config/products.json"; // Import JSON file
+import "../css/styles.scss"; 
+import productsData from "../config/products.json"; 
 
 class Featured extends Component {
   constructor() {
     super();
     this.state = {
       featuredProducts: [],
-      currentImageIndex: {} // New state to keep track of current image index per product
+      // Use a new state
+      currentImageIndex: {} 
     };
   }
 
@@ -19,7 +23,8 @@ class Featured extends Component {
     // Initialize current image index for each product
     const initialIndex = {};
     featured.forEach((product) => {
-      initialIndex[product.id] = 0; // Set the starting image index to 0 for each product
+        // Sets it to 0 had some issues here
+      initialIndex[product.id] = 0; 
     });
     this.setState({ currentImageIndex: initialIndex });
   }
@@ -32,7 +37,7 @@ class Featured extends Component {
         (product) => product.id === productId
       ).image.length;
 
-      const newIndex = (currentIndex + 1) % totalImages; // Loop back to the first image when at the last one
+      const newIndex = (currentIndex + 1) % totalImages; 
       return {
         currentImageIndex: {
           ...prevState.currentImageIndex,
@@ -50,8 +55,9 @@ class Featured extends Component {
         (product) => product.id === productId
       ).image.length;
 
+      // Loop back to the last image when at the first one
       const newIndex =
-        (currentIndex - 1 + totalImages) % totalImages; // Loop to the last image when going backwards
+        (currentIndex - 1 + totalImages) % totalImages;
       return {
         currentImageIndex: {
           ...prevState.currentImageIndex,
@@ -61,10 +67,31 @@ class Featured extends Component {
     });
   }
 
+
+  // Add product to cart
+  handleAddToCart = (product) => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const updatedCart = [...cart, product];
+
+    // We use localStorage to store the cart
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    this.updateCartIcon();
+  };
+
+  // Update the cart icon number
+  updateCartIcon = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartIcon = document.getElementById("cart-icon");
+    if (cartIcon) {
+      cartIcon.innerText = cart.length;
+    }
+  };
+
+  
   render() {
     return (
       <div>
-        <h2 className="featured-heading">Featured Products</h2>
+        <h2 className="featured-heading">What's Hot Right Now?</h2>
         <div className="products-container">
           {this.state.featuredProducts.map((product) => (
             <div className="product-card" key={product.id}>
@@ -89,10 +116,10 @@ class Featured extends Component {
                 </div>
               </div>
               <h3>{product.title}</h3>
-              <p className="price">{product.price}</p>
+              <p className="price">€{product.price}</p>
               <div className="buttons">
                 <a href="#">View</a>
-                <a href="#">Add to Basket</a>
+                <button id="addCart" onClick={() => this.handleAddToCart(product)}>Add to Cart</button>
               </div>
             </div>
           ))}

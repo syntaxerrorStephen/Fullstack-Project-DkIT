@@ -4,6 +4,9 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Featured from "./components/Featured";
+import Products from "./components/Products";
+import Cart from "./components/Cart";
+import ProductPage from "./components/ProductPage"; 
 import "./css/styles.scss";
 
 class App extends Component {
@@ -12,11 +15,11 @@ class App extends Component {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Header />} />
-          <Route path="/shop" element={<h2>Shop Page</h2>} />
-          <Route path="/cart" element={<h2>Cart Page</h2>} />
+          <Route path="/" element={<><Header /><Featured /></>}/>
+          <Route path="/shop" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/products/:id" element={<ProductPage />} />
         </Routes>
-        <Featured />
         <Footer />
       </Router>
     );

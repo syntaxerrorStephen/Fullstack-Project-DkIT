@@ -27,7 +27,8 @@ class Navbar extends Component {
           <Link to="/shop">Shop</Link>
           <Link to="/cart" className="cart-icon">
             <i className="fas fa-shopping-cart"></i>
-            <span className="cart-count">0</span>
+            <span id="cart-icon">0</span>
+
           </Link>
         </div>
       </nav>
@@ -36,3 +37,9 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+
+
+
+
+
+

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "../css/styles.scss";
 
 class Footer extends Component {
@@ -13,8 +14,8 @@ class Footer extends Component {
             <div className="footer-links">
               <ul>
                 <li><a href="#">Back To Top</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Cart</a></li>
+                <li><Link to="/shop">Shop</Link></li>
+                <li><Link to="/cart">Cart</Link></li>
               </ul>
             </div>
             <div className="social-icons">

@@ -2,76 +2,114 @@
     {
       "id": 1,
       "title": "Acoustic Guitar",
-      "price": "€299",
-      "image": ["https://r2.gear4music.com/media/35/357692/600/preview_3.jpg"],
-      "isFeatured": false
+      "price": 299,
+      "image": [
+        "https://r2.gear4music.com/media/35/357692/600/preview_3.jpg"
+    ],
+      "isFeatured": false,
+      "tags": ["guitar", "acoustic"],
+      "category": "guitar"
     },
     {
       "id": 2,
       "title": "Electric Guitar",
-      "price": "€499",
+      "price": 499,
       "image": [
         "https://r2.gear4music.com/media/106/1069077/600/preview.jpg",
         "https://r2.gear4music.com/media/106/1069073/1200/preview.jpg",
         "https://r2.gear4music.com/media/106/1069075/600/preview.jpg"
     ],
-      "isFeatured": true
+      "isFeatured": true,
+      "tags": ["guitar", "electric"],
+      "category": "guitar"
     },
     {
       "id": 3,
       "title": "Bass Guitar",
-      "price": "€599",
-      "image": ["https://r2.gear4music.com/media/57/579976/600/preview.jpg"],
-      "isFeatured": true
+      "price": 599,
+      "image": [
+        "https://r2.gear4music.com/media/57/579976/600/preview.jpg"
+    ],
+      "isFeatured": true,
+      "tags": ["guitar", "bass"],
+      "category": "guitar"
     },
     {
       "id": 4,
       "title": "Digital Piano",
-      "price": "€799",
-      "image": ["https://r2.gear4music.com/media/111/1115892/600/preview.jpg"],
-      "isFeatured": true
+      "price": 799,
+      "image": [
+        "https://r2.gear4music.com/media/111/1115892/600/preview.jpg"
+    ],
+      "isFeatured": true,
+      "tags": ["piano", "digital"],
+      "category": "piano"
     },
     {
       "id": 5,
       "title": "Drum Set",
-      "price": "€899",
-      "image": ["https://r2.gear4music.com/media/88/883714/600/preview.jpg"],
-      "isFeatured": true
+      "price": 899,
+      "image": [
+        "https://r2.gear4music.com/media/88/883714/600/preview.jpg"
+    ],
+      "isFeatured": true,
+      "tags": ["drums", "set"],
+      "category": "drums"
     },
     {
       "id": 6,
       "title": "Violin",
-      "price": "€199",
-      "image": ["https://r2.gear4music.com/media/90/902991/600/preview.jpg"],
-      "isFeatured": false
+      "price": 199,
+      "image": [
+        "https://r2.gear4music.com/media/90/902991/600/preview.jpg"
+    ],
+      "isFeatured": false,
+      "tags": ["violin"],
+      "category": "violin"
     },
     {
       "id": 7,
       "title": "Saxophone",
-      "price": "€1,099",
-      "image": ["https://r2.gear4music.com/media/34/347623/600/preview.jpg"],
-      "isFeatured": true
+      "price": 1099,
+      "image": [
+        "https://r2.gear4music.com/media/34/347623/600/preview.jpg"
+    ],
+      "isFeatured": true,
+      "tags": ["saxophone"],
+      "category": "saxophone"
     },
     {
       "id": 8,
       "title": "Trumpet",
-      "price": "€349",
-      "image": ["https://r2.gear4music.com/media/72/725273/600/preview.jpg"],
-      "isFeatured": false
+      "price": 349,
+      "image": [
+        "https://r2.gear4music.com/media/72/725273/600/preview.jpg"
+    ],
+      "isFeatured": false,
+      "tags": ["trumpet"],
+      "category": "trumpet"
     },
     {
       "id": 9,
       "title": "Flute",
-      "price": "€199",
-      "image": ["https://r2.gear4music.com/media/80/802199/600/preview.jpg"],
-      "isFeatured": false
+      "price": 199,
+      "image": [
+        "https://r2.gear4music.com/media/80/802199/600/preview.jpg"
+    ],
+      "isFeatured": false,
+      "tags": ["flute"],
+      "category": "flute"
     },
     {
       "id": 10,
       "title": "Cello",
-      "price": "€1,299",
-      "image": ["https://r2.gear4music.com/media/60/607101/600/preview.jpg"],
-      "isFeatured": false
+      "price": 1299,
+      "image": [
+        "https://r2.gear4music.com/media/60/607101/600/preview.jpg"
+    ],
+      "isFeatured": false,
+      "tags": ["cello"],
+      "category": "cello"
     }
   ]
   
